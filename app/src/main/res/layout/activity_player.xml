@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#85294580">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"> <!-- LinearLayout chứa tất cả các phần tử theo chiều dọc -->
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="330dp"
+            android:layout_height="330dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="165dp"> <!-- CardView hiển thị hình ảnh, bo góc với bán kính 165dp -->
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/mtp_1"
+                android:scaleType="centerCrop" /> <!-- ImageView chứa hình ảnh với kích thước cắt theo tỷ lệ của khung -->
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txt_song_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Song title"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <!-- Bố cục SeekBar với Current Time và Total Time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"> <!-- LinearLayout chứa SeekBar và thời gian, sắp xếp theo chiều ngang -->
+
+            <TextView
+                android:id="@+id/txt_current_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0:00"
+                android:textSize="14sp"
+                android:layout_gravity="start"
+                android:gravity="start" /> <!-- TextView hiển thị thời gian hiện tại của bài hát, cỡ chữ 14sp -->
+
+            <SeekBar
+                android:id="@+id/seekbar1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center" /> <!-- SeekBar điều chỉnh tiến trình phát bài hát, chiếm khoảng trống giữa hai TextView -->
+
+            <TextView
+                android:id="@+id/txt_total_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0:00"
+                android:textSize="14sp"
+                android:layout_gravity="end"
+                android:gravity="end" /> <!-- TextView hiển thị tổng thời gian của bài hát, cỡ chữ 14sp -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"> <!-- LinearLayout chứa các nút điều khiển, sắp xếp theo chiều ngang -->
+
+            <ImageView
+                android:id="@+id/img_pre"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_previous_32" /> <!-- Nút Previous, có kích thước 80x60dp -->
+
+            <ImageView
+                android:id="@+id/img_play"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_play_arrow_32" /> <!-- Nút Play/Pause, có kích thước 80x60dp -->
+
+            <ImageView
+                android:id="@+id/img_next"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_skip_next_32" /> <!-- Nút Next, có kích thước 80x60dp -->
+
+            <ImageView
+                android:id="@+id/img_repeat"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_repeat_off" /> <!-- Nút Repeat, có kích thước 50x40dp -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"> <!-- LinearLayout chứa SeekBar điều chỉnh âm lượng, sắp xếp theo chiều ngang -->
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_volume_down_32" /> <!-- Icon Volume Down -->
+
+            <SeekBar
+                android:id="@+id/seekbar2"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" /> <!-- SeekBar điều chỉnh âm lượng, dài 250dp -->
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_volume_up_24" /> <!-- Icon Volume Up -->
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRedirectHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home Page"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/> <!-- Nút xem danh sách bài hát, căn giữa, có khoảng cách phía trên 20dp -->
+
+        <Button
+            android:id="@+id/btn_show_song_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Song List"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</ScrollView>
